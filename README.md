@@ -1,8 +1,8 @@
-- 👋 Hi, I’m @judojonas
-- 👀 I’m interested in computers and coding
-- 🌱 I’m currently learning assembly
-- 💞️ I’m looking to collaborate on things
-- 📫 How to reach me: not
+🏢 - Professional Pentester, 'Ethical' Hacker, Red & Blue Teamer 🤖 - 🏢 
+
+📍 - Belgium, Flanders- - 📍
+   🇺🇦 - born_in_Ukraine - 🇺🇦 
+🏳️‍🌈 - LGBTQAIA+ member - 🏳️‍🌈
 
 <!---
 judojonas/judojonas is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
