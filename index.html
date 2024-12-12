@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name - Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #121212;
+            color: #e0e0e0;
+        }
+        header {
+            background: #1e1e1e;
+            color: #ffffff;
+            padding: 20px 0;
+            text-align: center;
+        }
+        h1 {
+            margin: 0;
+        }
+        section {
+            padding: 20px;
+            margin: 20px;
+            background: #1e1e1e;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+        h2 {
+            color: #bb86fc;
+        }
+        .project {
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #bb86fc;
+            border-radius: 5px;
+            transition: max-height 0.3s ease-in-out, padding 0.3s ease-in-out;
+            max-height: 40px; /* Closed state */
+            overflow: hidden;
+        }
+        .project:hover {
+            max-height: 200px; /* Expanded state */
+            padding: 10px; /* Maintain padding on hover */
+        }
+        .project p {
+            display: none; /* Hide description by default */
+        }
+        .project:hover p {
+            display: block; /* Show description on hover */
+        }
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            background: #1e1e1e;
+            color: white;
+        }
+        a {
+            color: #bb86fc;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>theTWIXhunter</h1>
+    <p>Developer | proffesional scriptkiddy | lorepsum</p>
+</header>
+
+<section id="about">
+    <h2>About Me</h2>
+    <p>Hello! I'm a passionate developer with a love for creating efficient and scalable software. I enjoy problem-solving and continuously strive to learn new technologies. In my free time, I enjoy working on personal projects and contributing to open-source.</p>
+</section>
+
+<section id="projects">
+    <h2>Projects</h2>
+    <div class="project">
+        <h3>Falixnodes support</h3>
+        <p>I am active and give comunity-support in the falixnodes discord server</p>
+        <a href="https://discord.com/invite/falix-community-710503370187735160" target="_blank">View on Discord</a>
+    </div>
+    <div class="project">
+        <h3>Minecraft server presets</h3>
+        <p>Download, unzip, play. get your pre-configured server in seconds for you and your friends</p>
+        <a href="https://thetwixhunter.github.io/serverpresets/" target="_blank">View the site</a> &emsp;
+        <a href="https://github.com/theTWIXhunter/serverpresets" target="_blank">View on GitHub</a>
+    </div>
+    <div class="project">
+        <h3>Project Title Three</h3>
+        <p>Short description of the project. Describe what it does, the technologies used, and your role in it.</p>
+        <a href="https://github.com/yourusername/project3" target="_blank">View on GitHub</a>
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2024 the_twix_hunter. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
