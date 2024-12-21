@@ -1,0 +1,140 @@
+```html
+<!-- TODO: make it so the FAQ and rules buttons are inside little boxes too with a nice hover animation -->
+<!DOCTYPE html>
+<html lang="en">
+<!-- HEAD -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minecraft Bimsem Server Network</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            color: #3f720d;
+        }
+        h2 {
+            color: #2b6347;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            background-color: #ffffff;
+            margin: 10px 0;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        a {
+            color: #1a73e8;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .title{
+            text-align: center;
+        }
+        .server-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 20px 0;
+        }
+        .server {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin: 10px;
+            text-align: center;
+        }
+        .links-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .full-width {
+            grid-column: span 2;
+            text-align: center;
+            margin-top: 20px;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: 10px 0;
+        }
+        .button {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            background-color: #ffffff;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        .button img {
+            width: 64px;
+            height: 64px;
+        }
+        .button:hover {
+            background-color: #e7f3fe;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<!-- BODY -->
+<body>
+    <h1 class="title">Welcome to the Minecraft Bimsem Server Network</h1 styl>
+    <h2>Useful Links</h2>
+    <div class="links-grid">
+        <div class="button">
+            <a href="faq.html">
+                <img src="faqicon.png" alt="">
+                FAQ
+            </a>
+        </div>
+        <div class="button">
+            <a href="rules.html">
+                <img src="rulesicon.png" alt=>
+                Server Rules
+            </a>
+        </div>
+    </div>
+    <!-- servers list -->
+    <div class="server-container">
+        <h2>Servers</h2>
+        <!-- survival -->
+        <div class="server">
+            <strong>Survival Server:</strong> 
+            <a href="http://survival.mcbimsem.be">survival.mcbimsem.be</a> - A regular survival server on version 1.21.4
+            <img src="survival-server-image.jpg" alt="Survival Server Image">
+        </div>
+        <!-- modded -->
+        <div class="server">
+            <strong>Modded Server:</strong> 
+            <a href="http://create.mcbimsem.be">create.mcbimsem.be</a> - A modded server with the Forge Modloader. Requires installation of the following mods:
+            <ul>
+                <li>Create</li>
+                <li>Unusual Prehistory</li>
+                <li>Minecolonies</li>
+            </ul>
+            <img src="modded-server-image.jpg" alt="Modded Server Image">
+        </div>
+    </div>
+    <div class="button">
+        <a href="discord.html">Discord</a>
+    </div>
+</body>
+</html>
+```
