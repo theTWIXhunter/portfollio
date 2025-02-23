@@ -30,65 +30,88 @@
             box-shadow: 0 2px 5px rgba(255, 255, 255, 0.1);
         }
         .rule {
-            margin-bottom: 15px;
+            margin-bottom: 10px;
             padding: 10px;
             background-color: #272727;
             border-left: 5px solid #bb86fc;
             border-radius: 5px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
-        .important {
-            color: #ff5757;
-        }
-        .warning-system {
-            margin-top: 20px;
-            background-color: #222;
-            padding: 15px;
+        .rule-content {
+            display: none;
+            padding: 10px;
+            background-color: #333;
+            margin-top: 5px;
             border-radius: 5px;
+            margin-bottom: 15px;
+        }
+        .rule .arrow {
+            transition: transform 0.3s;
+        }
+        .rule.active .arrow {
+            transform: rotate(90deg);
+        }
+        .back-button {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background-color: #007bff;
+            color: #ffffff;
+            padding: 10px 15px;
+            border-radius: 5px;
+            text-decoration: none;
         }
     </style>
+    <script>
+        function toggleRuleContent(id) {
+            var content = document.getElementById(id);
+            var rule = content.previousElementSibling;
+            content.style.display = content.style.display === 'block' ? 'none' : 'block';
+            rule.classList.toggle('active');
+        }
+    </script>
 </head>
 <body>
+    <a href="javascript:history.back()" class="back-button">Back</a>
     <h1>Server Rules</h1>
     <div class="rules-container">
         <h2>Discord Server Rules</h2>
-        <div class="rule">1) No DM'ing Moderators / Staff.</div>
-        <div class="rule">2) No spamming, including DM spam.</div>
-        <div class="rule">3) No walls of text. Keep messages readable.</div>
-        <div class="rule">4) No excessive pinging of staff.</div>
-        <div class="rule">5) No discrimination of any kind.</div>
-        <div class="rule">6) No bothering or annoying staff.</div>
-        <div class="rule">7) No bullying.</div>
-        <div class="rule">8) No graphic images except in #to-mod.</div>
-        <div class="rule">9) No posting dead/beheaded body images.</div>
+        <div class="rule" onclick="toggleRuleContent('rule1')">1) DM'ing Moderators / Staff ==> please don't <span class="arrow">▶</span></div>
+        <div class="rule-content" id="rule1">Use proper channels for contacting staff.</div>
+        <div class="rule" onclick="toggleRuleContent('rule2')">2) Spamming ==> this also includes DM's of moderators and Members <span class="arrow">▶</span></div>
+        <div class="rule-content" id="rule2">Flooding chat with excessive messages or pings is not allowed.</div>
+        <div class="rule" onclick="toggleRuleContent('rule3')">3) Walls of text ==> please don't send too-long messages, nobody reads them <span class="arrow">▶</span></div>
+        <div class="rule-content" id="rule3">Break up large messages for readability.</div>
+        <div class="rule" onclick="toggleRuleContent('rule4')">4) Pinging staff members multiple times ==> I (surprisingly enough) have a life too <span class="arrow">▶</span></div>
+        <div class="rule-content" id="rule4">Avoid excessive staff pings.</div>
+        <div class="rule" onclick="toggleRuleContent('rule5')">5) Discrimination ==> We obviously take any kind of discrimination very serieus <span class="arrow">▶</span></div>
+        <div class="rule-content" id="rule5">Any form of discrimination will not be tolerated.</div>
+        <div class="rule" onclick="toggleRuleContent('rule6')">6) Annoying/bothering Staff ==> Please don't <span class="arrow">▶</span></div>
+        <div class="rule-content" id="rule6">Respect the staff’s time and responsibilities.</div>
         
         <h2>Minecraft Server Rules</h2>
-        <div class="rule">(✘) No exploiting glitches.</div>
-        <div class="rule">(✘) No griefing bases.</div>
-        <div class="rule">(✘) No using chunkbase.</div>
-        <div class="rule">(✘) No killing pets (except dogs 🙂).</div>
-        <div class="rule">(✘) No inappropriate skins.</div>
-        <div class="rule">(✘) No stealing.</div>
-        <div class="rule">(✘) No killing AFK players.</div>
-        <div class="rule">(✘) No spawn killing or trapping.</div>
-        <div class="rule">(✔) Respect the staff and their decisions.</div>
-        <div class="rule">(✘) Do not use TLauncher or pirated versions of Minecraft.</div>
-        <div class="rule">(✘) Limit mob farms to 2 mobs per block to prevent lag.</div>
+        <div class="rule" onclick="toggleRuleContent('rule10')">1) Do not use glitches on this Server! <span class="arrow">▶</span></div>
+        <div class="rule-content" id="rule10">Glitch exploitation is forbidden.</div>
+        <div class="rule" onclick="toggleRuleContent('rule11')">2) You are not allowed to grief bases! <span class="arrow">▶</span></div>
+        <div class="rule-content" id="rule11">Destroying or modifying other players' structures is not allowed.</div>
+        <div class="rule" onclick="toggleRuleContent('rule12')">3) Do not steal <span class="arrow">▶</span></div>
+        <div class="rule-content" id="rule12">Taking other players' items without permission is not allowed.</div>
         
         <h2>Warnings and Punishments</h2>
-        <div class="warning-system">
-            <p><strong>Warning System:</strong></p>
-            <p>MINOR: 1 warn-point (expires in 1 week)</p>
-            <p>MAJOR: 3 warn-points (expires in 1 month)</p>
-            <p>CRITICAL: 5 warn-points (expires in 1 year)</p>
-            <p><strong>Punishments:</strong></p>
-            <ul>
-                <li>3 points: Temp-ban 3 days</li>
-                <li>5 points: Temp-ban 2 weeks, Discord timeout 3 days</li>
-                <li>6 points: Temp-ban 3 weeks, Discord timeout 2 weeks</li>
-                <li>7 points: Permanent ban</li>
-            </ul>
-        </div>
-        <p class="important">By joining, you agree to follow these rules.</p>
+        <p>MINOR: 1 warn-point (expires in 1 week)</p>
+        <p>MAJOR: 3 warn-points (expires in 1 month)</p>
+        <p>CRITICAL: 5 warn-points (expires in 1 year)</p>
+        <p>Punishments:</p>
+        <ul>
+            <li>3 points: Temp-ban 3 days</li>
+            <li>5 points: Temp-ban 2 weeks, Discord timeout 3 days</li>
+            <li>6 points: Temp-ban 3 weeks, Discord timeout 2 weeks</li>
+            <li>7 points: Permanent ban</li>
+        </ul>
+        <p>By participating and joining this server, you have read and agreed to these rules.</p>
     </div>
 </body>
 </html>
