@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>theTWIXhunter - Portfolio</title>
+    <link rel="icon" type="image/png" href="twixlogocircle.png">
     <link rel="stylesheet" href="styles.css">
     <style>
         body {
@@ -18,6 +19,21 @@
             color: #ffffff;
             padding: 20px 0;
             text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        .header-logo {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+        }
+        
+        .header-content {
+            display: flex;
+            flex-direction: column;
         }
         h1 {
             margin: 0;
@@ -29,11 +45,58 @@
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
         }
+        
+        .contact-discord-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 0;
+            margin: 0;
+        }
+        
+        /* For larger screens, display contact and discord sections side by side */
+        @media (min-width: 768px) {
+            .contact-discord-container {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        
+        .contact-discord-container section {
+            margin: 20px;
+        }
+        
+        .discord-invite-btn {
+            display: inline-block;
+            background: #5865F2;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+        
+        .discord-invite-btn:hover {
+            background: #4752C4;
+            text-decoration: none;
+        }
         h2 {
             color: #bb86fc;
         }
+        .projects-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 10px;
+        }
+        
+        /* For larger screens, display projects in 2 columns */
+        @media (min-width: 768px) {
+            .projects-container {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        
         .project {
-            margin: 10px 0;
+            margin: 0;
             padding: 10px;
             border: 1px solid #bb86fc;
             border-radius: 5px;
@@ -69,8 +132,11 @@
 <body>
 
 <header>
-    <h1>theTWIXhunter</h1>
-    <p>Developer | professional script kiddy | lorepsum</p>
+    <img src="twixlogocircle.png" alt="theTWIXhunter Logo" class="header-logo">
+    <div class="header-content">
+        <h1>theTWIXhunter</h1>
+        <p>Developer | professional script kiddy | lorepsum</p>
+    </div>
 </header>
 
 <section id="about">
@@ -78,40 +144,55 @@
     <p>Hello! I'm a passionate developer with a love for creating unefficient and unscalable software. I continuously strive to not learn any new technologies.</p>
 </section>
 
-<section id="contact">
-    <h2>Contact Me</h2>
-    <p>You can reach me through the following platforms:</p>
-    <ul>
-        <li><a href="https://discord.com/users/1244004992046596232" target="_blank">Discord</a></li>
-        <li><a href="https://github.com/theTWIXhunter" target="_blank">GitHub</a></li>
-        <li><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">Grindr</a></li> <!-- This will redirect to a rickroll -->
-    </ul>
-</section>
+<div class="contact-discord-container">
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <p>You can reach me through the following platforms:</p>
+        <ul>
+            <li><a href="https://discord.com/users/1244004992046596232" target="_blank">Discord</a></li>
+            <li><a href="https://github.com/theTWIXhunter" target="_blank">GitHub</a></li>
+            <li><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">Grindr</a></li> <!-- This will redirect to a rickroll -->
+        </ul>
+    </section>
+
+    <section id="discord-server">
+        <h2>Join my Discord Server</h2>
+        <p>Join my community discord server to chat, get help, and connect with other members!</p>
+        <a href="https://discord.gg/9HVd9fe7rV" target="_blank" class="discord-invite-btn">Join Server</a>
+    </section>
+</div>
+
 
 <section id="projects">
     <h2>Projects</h2>
-    <div class="project">
-        <h3>Falixnodes support</h3>
-        <p>I am active and give community support in the Falixnodes discord server</p>
-        <a href="https://discord.com/invite/falix-community-710503370187735160" target="_blank">View on Discord</a>
-    </div>
-    <div class="project">
-        <h3>Minecraft server presets</h3>
-        <p>Download, unzip, play. Get your pre-configured server in seconds for you and your friends</p>
-        <a href="https://thetwixhunter.github.io/serverpresets/" target="_blank">View the site</a> &emsp;
-        <a href="https://github.com/theTWIXhunter/serverpresets" target="_blank">View on GitHub</a>
-    </div>
-    <div class="project">
-        <h3>Falixnodes KB</h3>
-        <p>I wrote some articles for the Falixnodes KB</p>
-        <a href="https://kb.falixnodes.net" target="_blank">View the site</a> &emsp;
-        <a href="https://github.com/theTWIXhunter/KB-articles" target="_blank">View on GitHub</a>
-    </div>
-    <div class="project">
-        <h3>Better-falix (extention)</h3>
-        <p>Improve the falixnodes.net site(s) with many customizable features</p>
-        <a href="https://example.com" target="_blank">View on the Chrome-webstore</a>
-        <a href="https://github.com/theTWIXhunter/better-falix" target="_blank">View on GitHub</a>
+    <div class="projects-container">
+        <div class="project">
+            <h3>Falixnodes support</h3>
+            <p>I am active and give community support in the Falixnodes discord server</p>
+            <a href="https://discord.com/invite/falix-community-710503370187735160" target="_blank">View on Discord</a>
+        </div>
+        <div class="project">
+            <h3>Minecraft server presets</h3>
+            <p>Download, unzip, play. Get your pre-configured server in seconds for you and your friends</p>
+            <a href="https://thetwixhunter.github.io/serverpresets/" target="_blank">View the site</a> &emsp;
+            <a href="https://github.com/theTWIXhunter/serverpresets" target="_blank">View on GitHub</a>
+        </div>
+        <div class="project">
+            <h3>Falixnodes KB</h3>
+            <p>I wrote some articles for the Falixnodes KB</p>
+            <a href="https://kb.falixnodes.net" target="_blank">View the site</a> &emsp;
+            <a href="https://github.com/theTWIXhunter/KB-articles" target="_blank">View on GitHub</a>
+        </div>
+        <div class="project">
+            <h3>Better-falix (extention)</h3>
+            <p>Improve the falixnodes.net site(s) with many customizable features</p>
+            <a href="https://github.com/theTWIXhunter/better-falix" target="_blank">View on GitHub</a>
+        </div>
+        <div class="project">
+            <h3>ModBot (DiscordBot)</h3>
+            <p>A custom made discord.js bot for my discord servers.</p>
+            <a href="https://discord.gg/rfxpKXTKWm" target="_blank">View on Discord</a>
+        </div>
     </div>
 </section>
 
